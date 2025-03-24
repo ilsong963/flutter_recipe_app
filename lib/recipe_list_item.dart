@@ -13,10 +13,18 @@ class RecipeListItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset('assets/images/$assetName.jpg'),
+          AspectRatio(
+            aspectRatio: 2 / 1,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset('assets/images/$assetName.jpg', fit: BoxFit.cover),
+            ),
+          ),
+          SizedBox(height: 8),
           Text('Made $title', style: TextStyle(fontSize: 20)),
+
+          SizedBox(height: 4),
           Text(
-            // 문자열 안에 $기호와 변수명을 입력하면 문자열 내에서 변수를 사용할 수 있습니다.
             "Have you ever made your own $title? Once you've tried a homemade $title, you'll never go back.",
             style: TextStyle(fontSize: 12),
           ),
