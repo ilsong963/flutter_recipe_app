@@ -5,6 +5,22 @@ class RecipeMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("RecipeMenu");
+    return Row(
+      children: [
+        Container(
+          width: 60,
+          height: 80,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), border: Border.all(color: Colors.black12)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.food_bank, color: Colors.redAccent, size: 30),
+              SizedBox(height: 5),
+              Text('ALL', style: TextStyle(color: Colors.black87)),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }
