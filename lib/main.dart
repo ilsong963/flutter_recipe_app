@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_recipe_app/recipe_list_item.dart';
 import 'package:flutter_recipe_app/recipe_menu.dart';
@@ -23,16 +24,14 @@ class RecipePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AppBar Demo'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.add_alert),
-            tooltip: 'Show Snackbar',
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('This is a snackbar')));
-            },
+        actions: [
+          Icon(
+            CupertinoIcons.search, // 쿠퍼티노 아이콘 사용
+            color: Colors.black,
           ),
-          IconButton(icon: const Icon(Icons.navigate_next), tooltip: 'Go to the next page', onPressed: () {}),
+          SizedBox(width: 15),
+          Icon(CupertinoIcons.heart, color: Colors.redAccent),
+          SizedBox(width: 15),
         ],
       ),
       body: Column(
